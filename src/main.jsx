@@ -6,6 +6,7 @@ import ToolsLayout from './components/Tools/ToolsLayout';
 import ErrorBoundary from './components/ErrorBoundary';
 import NotFound from './components/NotFound';
 import Navbar from './components/Navbar';
+import PosterWall from './lab/posterwall/PosterWall';
 
 const AppWithNavbar = ({ children }) => (
   <>
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/dns-lookup-tools",
     element: <AppWithNavbar><ToolsLayout /></AppWithNavbar>,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/lab/poster-wall",
+    element: <PosterWall />,
     errorElement: <NotFound />,
   },
   { 
