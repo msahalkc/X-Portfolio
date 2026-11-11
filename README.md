@@ -1,45 +1,35 @@
-# Portfolio
+# msahalkc.com
 
-This is a portfolio website showcasing my skills, works, about me, and contact information.
+Personal site of Muhammed Sahal K C: a minimal, blueprint-style single page that doubles as a résumé.
 
-## Overview
+## Sections
 
-This portfolio website is built using React.js. It consists of several components, including:
+Hero → Building (Asset Build, ExtenD case studies) → Earlier work → Experience → Writing (Medium) → About → Contact. Unknown paths show a 404 page with a button back home.
 
-- Navbar: Navigation bar for easy navigation between sections.
-- MainText: Introduction section with a title.
-- Skills: Section displaying my skills and expertise.
-- Works: Section showcasing my recent works and projects.
-- About: Section providing information about me and my background.
-- Contact: Section with contact information and a contact form.
+## Stack
 
-## Features
+- Vite 5 + React 18, react-router-dom 6
+- Plain CSS with theme tokens (`src/styles/global.css`), light and dark themes
+- Geist and Geist Mono from Google Fonts; Brittany Signature (local) for the signature
+- Jest for unit tests
+- Netlify hosting, Umami analytics
 
-- Clean and modern design.
-- Responsive layout for compatibility with various devices and screen sizes.
-- Smooth navigation with a fixed navbar.
-- Interactive sections with engaging content.
-- Contact form for easy communication.
+## Editing content
 
-## Usage
+- Page copy: `src/data/content.jsx`
+- Project screenshots: `public/projects/`
+- Social preview and icons: `public/og.png`, `public/favicon*`, `public/apple-touch-icon.png`
 
-To run the portfolio website locally:
+## Medium posts
 
-1. Clone this repository to your local machine.
-2. Navigate to the project directory in your terminal.
-3. Run `npm install` to install the necessary dependencies.
-4. Run `npm start` to start the development server.
-5. Open your web browser and visit `http://localhost:3000` to view the website.
+`npm run build` runs `scripts/fetch-medium.mjs` first. It pulls the feed from `medium.com/feed/@msahalkc` and writes `src/data/medium.json`. If Medium can't be reached, the committed file is kept and the build carries on.
 
-## Technologies Used
+## Development
 
-- React.js: JavaScript library for building user interfaces.
-- HTML/CSS: Markup and styling for the website layout and design.
-- Bootstrap: CSS framework for responsive design and layout.
-- FontAwesome: Icon library for adding icons to the website.
-- Other dependencies: React Router for routing, Axios for HTTP requests (if applicable), etc.
-
-## Credits
-
-- Icons: FontAwesome (https://fontawesome.com/)
-
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm test
+npm run lint
+npm run build     # fetches Medium posts, then builds to dist/
+```

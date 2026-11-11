@@ -1,27 +1,22 @@
-// App.jsx
-// import './App.css'
-import "./index.css";
-import './fonts/Fonts.css';
-import { DarkMode } from "./components/DarkMode/DarkMode";
-
-import Landing from './components/Landing'
-import Works from "./components/Works";
-import Experience from "./components/Experience";
 import About from "./components/About";
+import Building from "./components/Building";
 import Contact from "./components/Contact";
-import Blog from "./components/Blog";
+import Experience from "./components/Experience";
+import Hero from "./components/Hero";
+import Layout from "./components/Layout";
+import Work from "./components/Work";
+import Writing from "./components/Writing";
 
-const App = () => {
-  return (
-    <div>
-        <Landing />
-        <Works />
-        <Experience />
-        <Blog />
-        <About />
-        <Contact />
-      </div>
-  );
-};
+const App = () => (
+  <Layout>
+    <Hero />
+    <Building />
+    <Work />
+    <Experience />
+    <Writing />
+    <About />
+    <Contact />
+  </Layout>
+);
 
 export default App;

@@ -1,6 +1,4 @@
 import { Component } from "react";
-import { Card, CardBody, Button } from "@nextui-org/react";
-import { Link } from "react-router-dom";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -8,27 +6,20 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex items-center justify-center p-4">
-          <Card className="w-full max-w-2xl">
-            <CardBody className="text-center space-y-4">
-              <h1 className="text-4xl Bebas">Oops! Something went wrong</h1>
-              <p>We're sorry for the inconvenience. Please try again later.</p>
-              <Button
-                as={Link}
-                to="/"
-                className="bg-blueee-500 dark:bg-emerald-500 text-white"
-              >
-                Return Home
-              </Button>
-            </CardBody>
-          </Card>
+        <div className="wrap lost">
+          <span className="label">Something went wrong</span>
+          <h1>This page didn&apos;t load.</h1>
+          <p>Try reloading. If it keeps happening, email me at msahalkc@gmail.com.</p>
+          <a className="home-btn" href="/">
+            Go home
+          </a>
         </div>
       );
     }
