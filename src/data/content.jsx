@@ -1,13 +1,43 @@
 // All page copy lives here so the components stay presentational.
 
 export const site = {
+  url: "https://msahalkc.com",
   name: "Muhammed Sahal K C",
+  // Name forms the owner uses; "Sahal KC" is kept for search matching only.
+  alternateNames: ["Sahal K C", "Sahal KC", "msahalkc", "sahal.kc"],
   short: "sahal kc",
+  role: "Software Development Engineer 2",
+  employer: { name: "FantaCode", url: "https://fantacode.com" },
+  location: "Kozhikode, Kerala, India",
+  school: {
+    name: "MES College of Engineering, Kuttippuram",
+    degree: "Bachelor of Computer Science and Engineering",
+  },
   email: "msahalkc@gmail.com",
   github: "https://github.com/msahalkc",
   linkedin: "https://www.linkedin.com/in/sahalkc/",
   medium: "https://msahalkc.medium.com/",
+  behance: "https://www.behance.net/msahalkc",
+  description:
+    "Muhammed Sahal K C (Sahal K C) is an SDE 2 at FantaCode in Kozhikode, Kerala. A designer turned software engineer building Asset Build and ExtenD.",
+  knowsAbout: [
+    "Full-stack development",
+    "ASP.NET",
+    "Angular",
+    "React",
+    "Next.js",
+    "Swift",
+    "UI/UX design",
+    "Graphic design",
+  ],
 };
+
+export const profiles = [
+  { href: site.github, text: "GitHub" },
+  { href: site.linkedin, text: "LinkedIn" },
+  { href: site.medium, text: "Medium" },
+  { href: site.behance, text: "Behance" },
+];
 
 export const nav = [
   { href: "#building", label: "Building" },
@@ -21,6 +51,7 @@ export const nav = [
 export const products = [
   {
     id: "ab",
+    slug: "asset-build",
     label: "Personal finance · live · free",
     name: "Asset Build",
     tagline: "Your money, one clear picture. Without handing it to anyone.",
@@ -40,9 +71,20 @@ export const products = [
       "Everything is off by default. You turn on only what you use.",
     ],
     stack: "Next.js · TypeScript · PostgreSQL + Prisma · NextAuth · Capacitor for iOS and Android · Vercel",
+    facts: [
+      ["Role", "Designer and developer"],
+      ["Status", "Live · free"],
+      ["Started", "October 2024"],
+      ["Platforms", "Web, Android, iOS (Capacitor)"],
+    ],
+    pageLinks: [{ href: "https://assetbuild.in", text: "Visit assetbuild.in", accent: true }],
+    metaDescription:
+      "Asset Build is a private personal-finance tracker by Muhammed Sahal K C: manual entry, no bank, SMS or email access, with gold, investments and chit funds in one net worth.",
+    schema: { applicationCategory: "FinanceApplication", operatingSystem: "Web, Android, iOS", url: "https://assetbuild.in", free: true },
   },
   {
     id: "ex",
+    slug: "extend",
     label: "macOS + iPadOS · open source · MIT",
     name: "ExtenD",
     tagline: "A second screen I already owned, without mixing work and personal accounts.",
@@ -64,6 +106,19 @@ export const products = [
       "The link carries my screen and my input, so it's encrypted end to end with a Noise XX handshake I implemented on CryptoKit. It stays on the local network and ignores input while the Mac is locked.",
     ],
     stack: "Swift · SwiftUI · ScreenCaptureKit · VideoToolbox (H.264) · CryptoKit · Network · XcodeGen — Apple silicon Mac, macOS 15+, iPadOS 18+",
+    facts: [
+      ["Role", "Designer and developer"],
+      ["Status", "Open source · MIT"],
+      ["Platforms", "macOS 15+ and iPadOS 18+"],
+      ["Requires", "Apple silicon Mac"],
+    ],
+    pageLinks: [
+      { href: "https://extend.msahalkc.com", text: "Visit extend.msahalkc.com", accent: true },
+      { href: "https://github.com/msahalkc/ExtenD", text: "Source on GitHub" },
+    ],
+    metaDescription:
+      "ExtenD by Muhammed Sahal K C turns an iPad into a second display for a Mac over USB-C or Wi-Fi, with touch and Apple Pencil, without a shared Apple Account. Free and open source.",
+    schema: { applicationCategory: "UtilitiesApplication", operatingSystem: "macOS 15, iPadOS 18", url: "https://extend.msahalkc.com", free: true, license: "https://opensource.org/licenses/MIT", codeRepository: "https://github.com/msahalkc/ExtenD" },
   },
 ];
 

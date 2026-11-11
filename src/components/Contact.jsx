@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { site } from "../data/content";
+import { profiles, site } from "../data/content";
 import Section from "./Section";
 
 const Contact = () => {
@@ -42,13 +42,12 @@ const Contact = () => {
         </div>
         <div>
           <span className="label">Elsewhere</span>
-          <span style={{ display: "flex", gap: 16 }}>
-            <a className="arrow" href={site.github} target="_blank" rel="noopener noreferrer">
-              GitHub ↗
-            </a>
-            <a className="arrow" href={site.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn ↗
-            </a>
+          <span className="profiles">
+            {profiles.map((profile) => (
+              <a key={profile.href} className="arrow" href={profile.href} target="_blank" rel="me noopener noreferrer">
+                {profile.text} ↗
+              </a>
+            ))}
           </span>
         </div>
       </div>

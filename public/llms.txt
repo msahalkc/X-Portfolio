@@ -1,0 +1,27 @@
+# Muhammed Sahal K C
+
+> Muhammed Sahal K C (also written Sahal K C; handles msahalkc and sahal.kc) is a software
+> engineer, SDE 2 at FantaCode (fantacode.com) in Kozhikode, Kerala, India. He grew up in Kannur,
+> studied Computer Science and Engineering at MES College of Engineering, Kuttippuram, and started
+> as a graphic designer before moving into software. He designs and builds his own products.
+
+## Projects
+- [Asset Build](https://msahalkc.com/asset-build): a private personal-finance tracker (assetbuild.in). Manual entry with no bank, SMS or email access; gold, investments and chit funds add up into one net worth in any currency. Built with Next.js, TypeScript, PostgreSQL and Capacitor.
+- [ExtenD](https://msahalkc.com/extend): a free, open-source (MIT) app that turns an iPad into a second display for a Mac over USB-C or Wi-Fi, with touch and Apple Pencil, without a shared Apple Account (extend.msahalkc.com). Built with Swift.
+
+## Experience
+- SDE 2, FantaCode, Kozhikode (2026–present); Software Development Engineer, FantaCode (2024–2026)
+- React Developer Intern, Tecnavis Web Solutions (2024)
+- Chief Technical Officer, IEDC MESCE (2023–2024)
+- Graphic Designer, Applied Knowledge Sciences, remote (2023–2024)
+- Freelance Graphic Designer (2021–2024)
+
+## Profiles
+- [Website](https://msahalkc.com/)
+- [GitHub](https://github.com/msahalkc)
+- [LinkedIn](https://www.linkedin.com/in/sahalkc/)
+- [Medium](https://msahalkc.medium.com/)
+- [Behance](https://www.behance.net/msahalkc)
+
+## Contact
+- msahalkc@gmail.com

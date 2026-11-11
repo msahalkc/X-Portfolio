@@ -4,7 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 const Nav = () => (
   <header className="nav">
     <div className="wrap">
-      <a className="brand" href="/#top" aria-label={`${site.name}, home`}>
+      <a className="brand" href="/" aria-label={`${site.name}, home`}>
         <span>{site.short}</span>
       </a>
       <nav aria-label="Sections">

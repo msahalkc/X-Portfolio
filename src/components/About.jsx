@@ -14,8 +14,8 @@ const About = () => (
       </ol>
       <div className="about-text">
         <p>
-          I grew up in Kannur and went to Kuttippuram for engineering. Designing posters for college clubs is how I
-          got in the door, and design led me into code.
+          I grew up in Kannur and studied Computer Science and Engineering at MES College of Engineering,
+          Kuttippuram. Designing posters for college clubs is how I got in the door, and design led me into code.
         </p>
         <p>
           At FantaCode I work across the whole product: interface, frontend and backend, mostly with ASP.NET and
