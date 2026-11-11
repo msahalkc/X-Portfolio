@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Layout from "./Layout";
 
 const NotFound = () => (
@@ -7,9 +6,9 @@ const NotFound = () => (
       <span className="label">Error 404</span>
       <h1>This page doesn&apos;t exist.</h1>
       <p>The link may be old, or the page has moved. Everything I do is on the home page.</p>
-      <Link className="home-btn" to="/">
+      <a className="home-btn" href="/">
         Go home
-      </Link>
+      </a>
     </div>
   </Layout>
 );

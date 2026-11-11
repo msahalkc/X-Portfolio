@@ -16,8 +16,11 @@ const Case = ({ product }) => (
         <p className="tagline">{product.tagline}</p>
       </div>
       <div className="hero-links">
-        {product.links.map((link) => (
-          <ExternalLink key={link.href} {...link} />
+        <a className="arrow accent" href={`/${product.slug}`}>
+          Read the full story →
+        </a>
+        {product.links.slice(0, 1).map((link) => (
+          <ExternalLink key={link.href} {...link} accent={false} />
         ))}
       </div>
     </header>

@@ -18,13 +18,21 @@ const field = (xml, tag) => {
   return m[1].replace(/^<!\[CDATA\[([\s\S]*)\]\]>$/, "$1").trim();
 };
 
-export const excerpt = (html, maxWords = 30) => {
+// First sentences of the post, up to about `maxChars`, so summaries end at a full stop.
+// Falls back to whole words with an ellipsis when the first sentence is already too long.
+export const excerpt = (html, maxChars = 220) => {
   const text = decodeEntities(html.replace(/<(figure|figcaption|pre|code)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " "))
     .replace(/\s+/g, " ")
     .trim();
-  const words = text.split(" ");
-  if (words.length <= maxWords) return text;
-  return `${words.slice(0, maxWords).join(" ").replace(/[,;:.!?]+$/, "")}…`;
+  if (text.length <= maxChars) return text;
+  let out = "";
+  for (const sentence of text.split(/(?<=[.!?])\s+/)) {
+    if (out && out.length + sentence.length + 1 > maxChars) break;
+    out = out ? `${out} ${sentence}` : sentence;
+  }
+  if (out.length <= maxChars) return out;
+  const cut = text.slice(0, maxChars);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:.!?]+$/, "")}…`;
 };
 
 export const parseMediumFeed = (xml) =>

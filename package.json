@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node scripts/fetch-medium.mjs",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js",
@@ -15,8 +15,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",

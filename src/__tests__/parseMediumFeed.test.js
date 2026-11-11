@@ -29,9 +29,12 @@ describe("parseMediumFeed", () => {
     expect(parseMediumFeed("<rss><channel></channel></rss>")).toEqual([]);
   });
 
-  test("excerpt trims long text to whole words with an ellipsis", () => {
-    const words = Array.from({ length: 40 }, (_, i) => `w${i}`).join(" ");
-    expect(excerpt(`<p>${words}.</p>`, 5)).toBe("w0 w1 w2 w3 w4…");
+  test("excerpt stops at the last full sentence that fits", () => {
+    expect(excerpt("<p>One two. Three four. Five six seven.</p>", 20)).toBe("One two. Three four.");
+  });
+
+  test("excerpt cuts a single long sentence at a word with an ellipsis", () => {
+    expect(excerpt("<p>alpha beta gamma delta epsilon</p>", 15)).toBe("alpha beta…");
   });
 
   test("decodes named and numeric entities", () => {
