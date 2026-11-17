@@ -19,8 +19,8 @@ const About = () => (
         </p>
         <p>
           At FantaCode I work across the whole product: interface, frontend and backend, mostly with ASP.NET and
-          Angular. Outside work I build the things I need, like Asset Build and ExtenD, and I write about what I
-          learn on Medium.
+          Angular. Outside work I build the things I need, like Asset Build, ExtenD, Adahly and
+          Simple Header Editor, and I write about what I learn on Medium.
         </p>
       </div>
     </div>

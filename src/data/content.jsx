@@ -65,6 +65,57 @@ export const products = [
     ],
     stack: "Swift · SwiftUI · ScreenCaptureKit · VideoToolbox (H.264) · CryptoKit · Network · XcodeGen — Apple silicon Mac, macOS 15+, iPadOS 18+",
   },
+  {
+    id: "ad",
+    label: "Android + Wear OS · coming soon · free",
+    name: "Adahly",
+    tagline: "Prayer and Quran habits, without ads or anyone watching.",
+    links: [{ href: "https://adahly.com", text: "adahly.com", accent: true }],
+    shot: {
+      src: "/projects/adahly.webp",
+      alt: "Adahly homepage: 'Pray on time. Read every day. Keep the lantern lit.' beside a phone showing today's prayer times",
+      caption: "adahly.com homepage",
+    },
+    why: "Many of the prayer apps on the Play Store were full of ads, and some tracked their users and sold that data. An app for something as personal as prayer shouldn't do either. So I built one with no ads, no trackers and nothing to sell.",
+    what: "It works out accurate prayer times on the phone, sends prayer alerts, points to the qibla and carries the full Mushaf in Arabic, all offline. On a Wear OS watch, a tile and a complication show the next prayer, and I can mark prayers, count tasbih and find the qibla from my wrist. Gentle streaks help prayer and reading become a habit, and excused days pause a streak instead of breaking it. Every feature is free.",
+    listLabel: "Decisions",
+    list: [
+      "Location never leaves the phone. Prayer times are calculated on the device, and no account is needed.",
+      "Sync is optional and end-to-end encrypted on the phone, with the key kept in the user's Google backup. The server only holds data it can't read.",
+      "No ads and no analytics SDKs. Crash reports are the only thing sent, and they carry no personal data.",
+      "Streaks can't be bought. Supporting the app is optional and unlocks nothing.",
+    ],
+    stack: "Flutter · Dart · Riverpod · Drift (SQLite) · Supabase (Auth, Postgres with row-level security, Edge Functions) · Firebase Cloud Messaging · Kotlin + Jetpack Glance widgets · Wear OS in Kotlin + Compose (Tiles, complications)",
+  },
+  {
+    id: "she",
+    label: "Chrome extension · open source · MIT",
+    name: "Simple Header Editor",
+    tagline: "Add an Authorization header in one click, with code anyone can read.",
+    links: [
+      {
+        href: "https://chromewebstore.google.com/detail/simple-header-editor/hhncneonhepfjcjhbaomadiglhbjmmbf",
+        text: "Chrome Web Store",
+        accent: true,
+      },
+      { href: "https://github.com/msahalkc/simple-header-editor", text: "GitHub" },
+    ],
+    shot: {
+      src: "/projects/simple-header-editor.webp",
+      alt: "Simple Header Editor popup with Authorization and X-Api-Key headers, restricted to api.example.com",
+      caption: "Chrome Web Store screenshot",
+    },
+    why: "I used a header extension every day at work. Then the Chrome Web Store removed it for carrying malicious code, and a tool that could see every request I made turned out not to be safe. I wanted one people can trust, so I wrote a small one and made it open source: anyone can read the code and check that it does only what it says.",
+    what: "It adds custom request headers, like Authorization, to every site or only the domains I list. It comes with an empty Authorization header ready to paste into, a switch to turn everything off, and tokens masked by default.",
+    listLabel: "Decisions",
+    list: [
+      <>Chrome applies the headers itself through <code>declarativeNetRequest</code>, so the extension never sees or touches the traffic.</>,
+      "Settings stay in local browser storage. It makes no network requests of its own and has no analytics.",
+      "The popup only saves settings. A background worker turns them into rules, so they keep working with the popup closed.",
+      "It's about 12 KB, small enough to read in one sitting, and the README explains every permission it asks for.",
+    ],
+    stack: "JavaScript · Chrome Manifest V3 · declarativeNetRequest · chrome.storage — Chrome, Edge, Brave and other Chromium browsers",
+  },
 ];
 
 export const work = [
