@@ -4,7 +4,7 @@ Personal site of Muhammed Sahal K C: a minimal, blueprint-style single page that
 
 ## Sections
 
-Hero → Building (Asset Build, ExtenD case studies) → Earlier work → Experience → Writing (Medium) → About → Contact. Unknown paths show a 404 page with a button back home.
+Hero → Building (Asset Build, ExtenD, Adahly, Simple Header Editor case studies) → Earlier work → Experience → Writing (Medium) → About → Contact. Unknown paths show a 404 page with a button back home.
 
 ## Stack
 

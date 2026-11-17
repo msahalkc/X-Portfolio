@@ -48,13 +48,13 @@ const Case = ({ product }) => (
 );
 
 const Building = () => (
-  <Section id="building" label="Building" title="Things I made for myself">
+  <Section id="building" label="Building" title="Tools I wished existed">
     <div className="products">
       <aside className="notice" role="note">
         <span className="label">Heads up</span>
         <p>
-          I&apos;m the only user of both, and I built them around my own needs. If you&apos;d like to use Asset
-          Build or ExtenD, <a href="#contact">write to me</a> and I&apos;ll help you get set up.
+          I&apos;m the only user of Asset Build and ExtenD, and I built them around my own needs. If you&apos;d like
+          to use either, <a href="#contact">write to me</a> and I&apos;ll help you get set up.
         </p>
       </aside>
       {products.map((product) => (
