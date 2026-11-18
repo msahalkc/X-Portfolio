@@ -1,24 +1,17 @@
 # msahalkc.com
 
-Personal site of Muhammed Sahal K C: a minimal, blueprint-style single page that doubles as a résumé.
+Personal site of Muhammed Sahal K C: a "workshop notebook" style home page that doubles as a résumé, plus a page for each project.
 
 ## Sections
 
-Hero → Building (Asset Build, ExtenD, Adahly, Simple Header Editor case studies) → Earlier work → Experience → Writing (Medium) → About → Contact. Unknown paths show a 404 page with a button back home.
-
-## Stack
-
-- Vite 5 + React 18, react-router-dom 6
-- Plain CSS with theme tokens (`src/styles/global.css`), light and dark themes
-- Geist and Geist Mono from Google Fonts; Brittany Signature (local) for the signature
-- Jest for unit tests
-- Netlify hosting, Umami analytics
+Hero → Projects → Earlier projects → Experience → Writing → Contact. Each project has its own page at `/projects/<slug>` (Asset Build, ExtenD, Adahly, Simple Header Editor). Unknown paths show a 404 page with a button back home.
 
 ## Editing content
 
-- Page copy: `src/data/content.jsx`
-- Project screenshots: `public/projects/`
-- Social preview and icons: `public/og.png`, `public/favicon*`, `public/apple-touch-icon.png`
+- Page copy, including each project page: `src/data/content.jsx`
+- Project screenshots: `public/projects/` (1600×1000 webp)
+- Link preview images: `public/og.png` and `public/og/<slug>.png`. Regenerate with `npm run og` (needs Playwright) after adding or renaming a project.
+- Icons: `public/favicon*`, `public/apple-touch-icon.png`
 
 ## Medium posts
 
@@ -31,5 +24,5 @@ npm install
 npm run dev       # http://localhost:5173
 npm test
 npm run lint
-npm run build     # fetches Medium posts, then builds to dist/
+npm run build     # fetches Medium posts, builds to dist/, then writes per-project preview pages
 ```

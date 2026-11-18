@@ -9,18 +9,24 @@ export const site = {
   medium: "https://msahalkc.medium.com/",
 };
 
+// Section anchors on the home page. Project pages link back with "/#id".
 export const nav = [
-  { href: "#building", label: "Building" },
-  { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
-  { href: "#writing", label: "Writing" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact", keep: true },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "writing", label: "Writing" },
+  { id: "contact", label: "Contact", keep: true },
 ];
+
+// Handwritten line in the hero, beside the featured project.
+export const heroNote = "Problem → design → build → use it every day.";
 
 export const products = [
   {
     id: "ab",
+    slug: "asset-build",
+    note: "Started as a gold tracker in October 2024. I've used it every day since.",
+    scribble: "started as a gold tracker, Oct 2024",
+    tilt: "-1.2deg",
     label: "Personal finance · live · free",
     name: "Asset Build",
     tagline: "Your money, one clear picture. Without handing it to anyone.",
@@ -43,6 +49,10 @@ export const products = [
   },
   {
     id: "ex",
+    slug: "extend",
+    note: "Sidecar, without putting my personal Apple Account on a work laptop.",
+    scribble: "Sidecar, minus the shared Apple Account",
+    tilt: "1deg",
     label: "macOS + iPadOS · open source · MIT",
     name: "ExtenD",
     tagline: "A second screen I already owned, without mixing work and personal accounts.",
@@ -67,6 +77,11 @@ export const products = [
   },
   {
     id: "ad",
+    featured: true,
+    slug: "adahly",
+    note: "No ads, no trackers, nothing to sell. Phone + watch.",
+    scribble: "no ads, no trackers, phone + watch",
+    tilt: "0.8deg",
     label: "Android + Wear OS · coming soon · free",
     name: "Adahly",
     tagline: "Prayer and Quran habits, without ads or anyone watching.",
@@ -89,6 +104,10 @@ export const products = [
   },
   {
     id: "she",
+    slug: "simple-header-editor",
+    note: "About 12 KB, open source and fully local.",
+    scribble: "12 KB, open source, fully local",
+    tilt: "-0.9deg",
     label: "Chrome extension · open source · MIT",
     name: "Simple Header Editor",
     tagline: "Add an Authorization header in one click, with code anyone can read.",
@@ -153,10 +172,4 @@ export const experience = [
   { when: "2023 — 2024", role: "Chief Technical Officer", org: "IEDC MESCE, Kuttippuram" },
   { when: "2023 — 2024", role: "Graphic Designer", org: "Applied Knowledge Sciences, remote" },
   { when: "2021 — 2024", role: "Freelance Graphic Designer", org: "Self-employed" },
-];
-
-export const route = [
-  { label: "Grew up", place: "Kannur" },
-  { label: "Studied", place: "Kuttippuram" },
-  { label: "Works", place: "Kozhikode" },
 ];

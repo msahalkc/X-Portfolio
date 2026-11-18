@@ -14,10 +14,10 @@ class ErrorBoundary extends Component {
     if (this.state.hasError) {
       return (
         <div className="wrap lost">
-          <span className="label">Something went wrong</span>
+          <span className="note kicker">Something went wrong</span>
           <h1>This page didn&apos;t load.</h1>
           <p>Try reloading. If it keeps happening, email me at msahalkc@gmail.com.</p>
-          <a className="home-btn" href="/">
+          <a className="btn btn-dark" href="/">
             Go home
           </a>
         </div>

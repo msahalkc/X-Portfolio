@@ -9,32 +9,20 @@ const Writing = () => {
   if (posts.length === 0) return null;
 
   return (
-    <Section id="writing" label="Writing" title="Notes on Medium">
-      <div className="rows">
+    <Section id="writing" title="Writing" aside="on Medium">
+      <div className="posts">
         {posts.map((post) => (
-          <article className="w" key={post.url}>
-            <span className="when">{monthYear(post.date)}</span>
-            <div>
-              <h3>
-                <a href={post.url} target="_blank" rel="noopener noreferrer">
-                  {post.title}
-                </a>
-              </h3>
-              <p>{post.summary}</p>
-            </div>
-            <span className="go">
-              <a href={post.url} target="_blank" rel="noopener noreferrer" aria-label={`Read “${post.title}” on Medium`}>
-                Read ↗
-              </a>
-            </span>
-          </article>
+          <a key={post.url} className="post" href={post.url} target="_blank" rel="noopener noreferrer">
+            <span className="note when">{monthYear(post.date)}</span>
+            <h3>{post.title}</h3>
+            <p>{post.summary}</p>
+            <span className="more">Read ↗</span>
+          </a>
         ))}
       </div>
-      <div className="hero-links">
-        <a className="arrow" href={site.medium} target="_blank" rel="noopener noreferrer">
-          All posts on Medium ↗
-        </a>
-      </div>
+      <a className="btn btn-line all-posts" href={site.medium} target="_blank" rel="noopener noreferrer">
+        All posts on Medium ↗
+      </a>
     </Section>
   );
 };

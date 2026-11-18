@@ -11,6 +11,8 @@ module.exports = {
   overrides: [
     { files: ['scripts/**', '*.config.js', '__mocks__/**'], env: { node: true } },
     { files: ['src/__tests__/**', 'src/setupTests.js'], env: { jest: true, node: true } },
+    // Hooks live in .jsx so Jest's babel transform loads them alongside the components.
+    { files: ['src/lib/**/*.jsx'], rules: { 'react-refresh/only-export-components': 'off' } },
   ],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },

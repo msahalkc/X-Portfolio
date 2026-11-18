@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
 import { site } from "../data/content";
-import Section from "./Section";
 
 const Contact = () => {
   const emailRef = useRef(null);
-  const [copyLabel, setCopyLabel] = useState("Copy");
+  const [copyLabel, setCopyLabel] = useState("Copy email");
 
   const selectEmail = () => {
     const range = document.createRange();
@@ -19,43 +18,32 @@ const Contact = () => {
     try {
       await navigator.clipboard.writeText(site.email);
       setCopyLabel("Copied");
-      setTimeout(() => setCopyLabel("Copy"), 1800);
+      setTimeout(() => setCopyLabel("Copy email"), 1800);
     } catch {
       selectEmail();
     }
   };
 
   return (
-    <Section id="contact" label="Contact" title="Say hello">
-      <div className="mail">
-        <span ref={emailRef}>{site.email}</span>
-        <button className="copy" type="button" onClick={copy}>
+    <section id="contact" aria-labelledby="contact-h" className="wrap sec contact">
+      <span className="note kicker">Contact</span>
+      <h2 id="contact-h">
+        <a className="hl" href={`mailto:${site.email}`} ref={emailRef}>
+          {site.email}
+        </a>
+      </h2>
+      <div className="actions">
+        <button className="btn btn-dark" type="button" onClick={copy}>
           {copyLabel}
         </button>
+        <a className="btn btn-line" href={site.github} target="_blank" rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+        <a className="btn btn-line" href={site.linkedin} target="_blank" rel="noopener noreferrer">
+          LinkedIn ↗
+        </a>
       </div>
-      <div className="contact-meta">
-        <div>
-          <span className="label">Write</span>
-          <a className="arrow" href={`mailto:${site.email}`}>
-            Send an email
-          </a>
-        </div>
-        <div>
-          <span className="label">Elsewhere</span>
-          <span style={{ display: "flex", gap: 16 }}>
-            <a className="arrow" href={site.github} target="_blank" rel="noopener noreferrer">
-              GitHub ↗
-            </a>
-            <a className="arrow" href={site.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn ↗
-            </a>
-          </span>
-        </div>
-      </div>
-      <p className="sig" aria-hidden="true">
-        Sahal
-      </p>
-    </Section>
+    </section>
   );
 };
 

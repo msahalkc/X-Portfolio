@@ -15,7 +15,7 @@ const config = {
   injectGlobals: true,
   roots: [path.resolve(__dirname, 'src')],
   modulePaths: [path.resolve(__dirname, 'src')],
-  testMatch: ['**/__tests__/**/*.js', '**/?(*.)+(spec|test).js'],
+  testMatch: ['**/__tests__/**/*.{js,jsx}', '**/?(*.)+(spec|test).{js,jsx}'],
   transformIgnorePatterns: [
     '/node_modules/',
     '\\.pnp\\.[^\\/]+$'

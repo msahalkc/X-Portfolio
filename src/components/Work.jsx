@@ -2,26 +2,24 @@ import { work } from "../data/content";
 import Section from "./Section";
 
 const Work = () => (
-  <Section id="work" label="Work" title="Earlier projects">
-    <div className="rows">
+  <Section id="work" title="Earlier projects">
+    <ul className="rows">
       {work.map((item) => (
-        <article className="r" key={item.name}>
-          <span className="when">{item.when}</span>
-          <h3>
-            {item.name}
-            {item.badge && <span className="badge">{item.badge}</span>}
-          </h3>
-          <p>{item.desc}</p>
+        <li className="row" key={item.name}>
+          <span className="note when">{item.badge ?? item.when}</span>
+          <span>
+            <b>{item.name}</b> <span className="muted">· {item.desc}</span>
+          </span>
           <span className="go">
             {item.links.map((link) => (
               <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
-                {link.text}
+                {link.text} ↗
               </a>
             ))}
           </span>
-        </article>
+        </li>
       ))}
-    </div>
+    </ul>
   </Section>
 );
 

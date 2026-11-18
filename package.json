@@ -7,6 +7,8 @@
     "dev": "vite",
     "prebuild": "node scripts/fetch-medium.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/prerender-meta.mjs",
+    "og": "node scripts/make-og.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest.js",
