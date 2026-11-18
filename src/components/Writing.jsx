@@ -1,5 +1,6 @@
 import posts from "../data/medium.json";
 import { site } from "../data/content";
+import Doodle from "./Doodle";
 import Section from "./Section";
 
 const monthYear = (iso) =>
@@ -9,7 +10,7 @@ const Writing = () => {
   if (posts.length === 0) return null;
 
   return (
-    <Section id="writing" title="Writing" aside="on Medium">
+    <Section id="writing" title="Writing" aside="on Medium" margin={<Doodle kind="cursor" className="margin-doodle md-right md-top" />}>
       <div className="posts">
         {posts.map((post) => (
           <a key={post.url} className="post" href={post.url} target="_blank" rel="noopener noreferrer">

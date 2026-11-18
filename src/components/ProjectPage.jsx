@@ -2,6 +2,9 @@ import { Link, useParams } from "react-router-dom";
 import { products } from "../data/content";
 import usePageMeta from "../lib/usePageMeta";
 import Layout from "./Layout";
+import { Pushpin } from "./DeskObjects";
+import Highlight from "./Highlight";
+import MarkedTitle from "./MarkedTitle";
 import NotFound from "./NotFound";
 import Photo from "./Photo";
 
@@ -31,7 +34,7 @@ const Project = ({ product, prev, next }) => {
             <span className="eyebrow">{product.label}</span>
             <h1 id="project-h">{product.name}</h1>
             <p className="tagline">
-              <span className="hl">{product.tagline}</span>
+              <Highlight>{product.tagline}</Highlight>
             </p>
             <div className="actions">
               {product.links.map((link) => (
@@ -39,25 +42,34 @@ const Project = ({ product, prev, next }) => {
               ))}
             </div>
           </div>
-          <p className="sticky note project-sticky">{product.note}</p>
+          <div className="sticky note project-sticky">
+            <Pushpin />
+            <p>{product.note}</p>
+          </div>
         </header>
 
-        <Photo src={product.shot.src} alt={product.shot.alt} caption={product.shot.caption} tilt="-0.5deg" tapes={2} eager />
+        <Photo src={product.shot.src} alt={product.shot.alt} caption={product.shot.caption} tilt="-0.5deg" fastener="tapes" eager />
 
         <div className="story">
           <section>
-            <h2>Why I built it</h2>
+            <h2>
+              <MarkedTitle>Why I built it</MarkedTitle>
+            </h2>
             <p>{product.why}</p>
           </section>
           <section>
-            <h2>What it does</h2>
+            <h2>
+              <MarkedTitle variant={1}>What it does</MarkedTitle>
+            </h2>
             <p>{product.what}</p>
           </section>
         </div>
 
         <section className="decisions" aria-labelledby="decisions-h">
           <header className="sec-head">
-            <h2 id="decisions-h">{product.listLabel}</h2>
+            <h2 id="decisions-h">
+              <MarkedTitle variant={2}>{product.listLabel}</MarkedTitle>
+            </h2>
           </header>
           <ol>
             {product.list.map((item, i) => (
@@ -70,7 +82,9 @@ const Project = ({ product, prev, next }) => {
         </section>
 
         <section className="stack" aria-labelledby="stack-h">
-          <h2 id="stack-h">Stack</h2>
+          <h2 id="stack-h">
+            <MarkedTitle>Stack</MarkedTitle>
+          </h2>
           <p className="mono">{product.stack}</p>
         </section>
 

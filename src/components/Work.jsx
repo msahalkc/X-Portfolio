@@ -1,8 +1,9 @@
 import { work } from "../data/content";
+import Doodle from "./Doodle";
 import Section from "./Section";
 
 const Work = () => (
-  <Section id="work" title="Earlier projects">
+  <Section id="work" title="Earlier projects" variant={1} margin={<Doodle kind="watch" className="margin-doodle md-left md-mid" />}>
     <ul className="rows">
       {work.map((item) => (
         <li className="row" key={item.name}>

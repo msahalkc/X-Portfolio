@@ -1,8 +1,10 @@
 import { experience } from "../data/content";
+import { CoffeeRing } from "./DeskObjects";
+import Doodle from "./Doodle";
 import Section from "./Section";
 
 const Experience = () => (
-  <Section id="experience" title="Experience">
+  <Section id="experience" title="Experience" variant={2} margin={<CoffeeRing />}>
     <div className="split">
       <div className="split-text">
         <p>
@@ -17,7 +19,10 @@ const Experience = () => (
       <ol className="timeline">
         {experience.map((job) => (
           <li key={`${job.role}-${job.org}`} className={job.now ? "now" : undefined}>
-            <span className="note when">{job.when}</span>
+            <span className="note when">
+              {job.when}
+              {job.now && <Doodle kind="circle" className="now-circle" />}
+            </span>
             <b>{job.role}</b>
             <span className="muted">{job.org}</span>
           </li>
