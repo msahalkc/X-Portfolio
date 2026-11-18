@@ -10,7 +10,7 @@
   --red: #c2402f;
   --yellow: #ffe66d;
   --blue-note: #dcebff;
-  --tape: rgba(233, 220, 192, 0.88);
+  --tape: rgba(232, 218, 186, 0.8);
   --head: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --ui: "Inter", "Helvetica Neue", Arial, sans-serif;
   --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
@@ -118,11 +118,20 @@ h1, h2, h3 { margin: 0; font-family: var(--head); font-weight: 700; text-wrap: b
 }
 .photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: var(--line); }
 .photo figcaption { margin-top: 8px; font-size: 21px; line-height: 1.2; color: var(--photo-ink); }
+/* Masking tape: translucent paper with a sheen, a couple of crinkles, fibres and torn ends.
+   The torn shape is on ::before so the outer element can cast a soft shadow (clip-path would clip it). */
 .tape {
-  position: absolute; top: -14px; left: 50%; width: 120px; height: 30px; margin-left: -60px;
-  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 2px, transparent 2px 6px), var(--noise), var(--tape);
+  position: absolute; top: -14px; left: 50%; width: 120px; height: 30px; margin-left: -60px; z-index: 2;
+  transform: rotate(-3deg); filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.18));
+}
+.tape::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0, rgba(255, 255, 255, 0) 38%, rgba(0, 0, 0, 0.06) 100%),
+    linear-gradient(96deg, transparent 27%, rgba(255, 255, 255, 0.3) 30%, transparent 33%, transparent 63%, rgba(80, 60, 20, 0.1) 65.5%, transparent 68%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.14) 0 1.5px, transparent 1.5px 5px),
+    var(--noise), var(--tape);
   clip-path: polygon(0 10%, 4% 0, 9% 6%, 92% 2%, 97% 8%, 100% 0, 98% 28%, 100% 48%, 97% 70%, 100% 92%, 94% 100%, 60% 96%, 6% 100%, 2% 92%, 0 72%, 3% 50%, 0 30%);
-  transform: rotate(-3deg);
 }
 .fasten-tapes .tape { left: 8%; margin-left: 0; transform: rotate(-4deg); }
 .fasten-tapes .tape-r { left: auto; right: 8%; transform: rotate(3deg); }
@@ -287,10 +296,10 @@ footer .sig { font-size: 28px; color: var(--ink); }
 .contact-arrow { width: 54px; height: 66px; color: var(--red); margin-top: 6px; }
 
 /* ---------- Desk objects ---------- */
-.pushpin { position: absolute; top: -18px; left: 50%; width: 30px; height: 34px; margin-left: -15px; z-index: 2; filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.2)); }
-.pin-blue circle:nth-of-type(1) { fill: #2f6fd6; }
-.paperclip { position: absolute; top: -26px; left: 22px; width: 22px; height: 60px; z-index: 2; transform: rotate(-8deg); filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2)); }
-.binderclip { position: absolute; top: -22px; left: 50%; width: 64px; height: 54px; margin-left: -32px; z-index: 2; filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.25)); }
+.pushpin { position: absolute; top: -12px; left: 50%; width: 40px; height: 35px; margin-left: -20px; z-index: 2; }
+.pin-blue { --pin: #2f6fd6; --pin-hi: #9cc0ff; --pin-lo: #133f8c; }
+.paperclip { position: absolute; top: -30px; left: 22px; width: 28px; height: 63px; z-index: 2; transform: rotate(-8deg); }
+.binderclip { position: absolute; top: -30px; left: 50%; width: 84px; height: 69px; margin-left: -42px; z-index: 2; }
 .coffee-ring { display: none; position: absolute; right: -4%; top: -40px; width: 200px; height: 200px; color: #8a5a2b; opacity: 0.22; transform: rotate(-20deg); pointer-events: none; }
 :root[data-theme="dark"] .coffee-ring { color: #d9b38c; opacity: 0.12; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .coffee-ring { color: #d9b38c; opacity: 0.12; } }
