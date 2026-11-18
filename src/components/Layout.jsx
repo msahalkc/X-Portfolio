@@ -1,15 +1,14 @@
+import { ScrollRestoration } from "react-router-dom";
 import Footer from "./Footer";
 import Nav from "./Nav";
 
-// Page chrome shared by the home page and the 404 page.
+// Page chrome shared by the home page, project pages and the 404 page.
 const Layout = ({ children }) => (
   <>
-    <div className="cols" aria-hidden="true">
-      <div className="wrap" />
-    </div>
     <Nav />
     <main id="top">{children}</main>
     <Footer />
+    <ScrollRestoration />
   </>
 );
 

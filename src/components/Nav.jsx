@@ -1,22 +1,25 @@
+import { Link, useLocation } from "react-router-dom";
 import { nav, site } from "../data/content";
-import ThemeToggle from "./ThemeToggle";
 
-const Nav = () => (
-  <header className="nav">
-    <div className="wrap">
-      <a className="brand" href="/#top" aria-label={`${site.name}, home`}>
-        <span>{site.short}</span>
-      </a>
-      <nav aria-label="Sections">
-        {nav.map((item) => (
-          <a key={item.href} href={`/${item.href}`} className={item.keep ? "keep" : undefined}>
-            {item.label}
-          </a>
-        ))}
-        <ThemeToggle />
-      </nav>
-    </div>
-  </header>
-);
+const Nav = () => {
+  const onHome = useLocation().pathname === "/";
+
+  return (
+    <header className="nav">
+      <div className="wrap">
+        <Link className="brand note" to="/" aria-label={`${site.name}, home`}>
+          Sahal
+        </Link>
+        <nav aria-label="Sections">
+          {nav.map((item) => (
+            <a key={item.id} href={onHome ? `#${item.id}` : `/#${item.id}`} className={item.keep ? "keep" : undefined}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+};
 
 export default Nav;
