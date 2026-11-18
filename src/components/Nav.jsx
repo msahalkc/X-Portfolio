@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { nav, site } from "../data/content";
+import ThemeToggle from "./ThemeToggle";
 
 const Nav = () => {
   const onHome = useLocation().pathname === "/";
@@ -16,6 +17,7 @@ const Nav = () => {
               {item.label}
             </a>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>

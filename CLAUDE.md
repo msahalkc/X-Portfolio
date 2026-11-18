@@ -6,15 +6,16 @@ Quick reference so the code doesn't need re-reading. Update the relevant line wh
 - Vite + React, react-router-dom 6 (`src/main.jsx`). Routes: `/` (App), `/projects/:slug` (ProjectPage), `*` (NotFound). Netlify sends every path to index.html.
 - Home sections in order: Hero → Projects → Earlier projects (Work.jsx) → Experience → Writing → Contact. Nav anchors: `#projects #experience #writing #contact`; on other pages the nav links to `/#id`.
 - All copy: `src/data/content.jsx` (`site`, `nav`, `heroNote`, `products`, `work`, `experience`). Components are presentational.
-- Look: "workshop notebook" (approved mockup E). Graph-paper body, taped screenshots (`Photo.jsx`), sticky notes, highlighter (`.hl`), handwritten asides (`.note`, Caveat). Fonts: Space Grotesk, Inter, Caveat, JetBrains Mono (Google Fonts in index.html). Light theme only; tokens on `:root` in `src/styles/global.css`.
+- Look: "workshop notebook" (approved mockup E). Graph-paper body, taped screenshots (`Photo.jsx`), sticky notes, highlighter (`.hl`), handwritten asides (`.note`, Caveat). Fonts: Space Grotesk, Inter, Caveat, JetBrains Mono (Google Fonts in index.html). Tokens on `:root` in `src/styles/global.css`; dark ("notebook at night") redefines them under `prefers-color-scheme: dark` (unless `data-theme="light"`) and again under `[data-theme="dark"]`. Toggle: `ThemeToggle.jsx` in the nav, saved in localStorage, applied before paint by a script in index.html. Photos and sticky notes stay light in dark mode.
 - Wording: plain website terms (Projects, Experience, Writing, Contact). No game or comic wording. Don't feature the Kannur → Kuttippuram → Kozhikode route.
-- Per-page title/description/canonical: `src/lib/usePageMeta.jsx` (hooks live in .jsx so Jest's babel transform loads them).
+- Per-page title/description/canonical/og:image in the browser: `src/lib/usePageMeta.jsx` (hooks live in .jsx so Jest's babel transform loads them).
+- Link previews for crawlers: `npm run build` → postbuild `scripts/prerender-meta.mjs` writes `dist/projects/<slug>.html` (index.html with that project's meta). Preview images: `public/og.png` (home) and `public/og/<slug>.png`, made by `npm run og` (`scripts/make-og.mjs`, needs Playwright; run by hand after adding/renaming a project). Both scripts read content.jsx via `scripts/load-content.mjs` (esbuild).
 
 ## Products
 - `products[]` fields: `id, slug, featured?, note (project-page sticky), scribble (card caption), tilt, label, name, tagline, links[{href,text,accent}], shot{src,alt,caption}, why, what, listLabel, list[], stack`.
 - Home: one card per product linking to `/projects/<slug>`. The `featured` product is the photo in the hero.
 - Project page (`ProjectPage.jsx`): back link, head + sticky, taped screenshot, Why / What, numbered decisions, stack, previous/next by array order.
-- Screenshots: `public/projects/<slug>.webp`, 1600×1000.
+- Screenshots: `public/projects/<slug>.webp`, 1600×1000. New project: add it to `products[]`, add the screenshot, run `npm run og`.
 - Order: Asset Build, ExtenD, Adahly (featured), Simple Header Editor.
 - "Heads up" note in `Projects.jsx`: only Asset Build and ExtenD are single-user.
 

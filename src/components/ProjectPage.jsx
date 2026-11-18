@@ -12,7 +12,12 @@ const ExternalLink = ({ href, text, accent }) => (
 );
 
 const Project = ({ product, prev, next }) => {
-  usePageMeta({ title: product.name, description: product.tagline, path: `/projects/${product.slug}` });
+  usePageMeta({
+    title: product.name,
+    description: product.tagline,
+    path: `/projects/${product.slug}`,
+    image: `/og/${product.slug}.png`,
+  });
 
   return (
     <Layout>

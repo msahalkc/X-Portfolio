@@ -10,7 +10,8 @@ Hero → Projects → Earlier projects → Experience → Writing → Contact. E
 
 - Page copy, including each project page: `src/data/content.jsx`
 - Project screenshots: `public/projects/` (1600×1000 webp)
-- Social preview and icons: `public/og.png`, `public/favicon*`, `public/apple-touch-icon.png`
+- Link preview images: `public/og.png` and `public/og/<slug>.png`. Regenerate with `npm run og` (needs Playwright) after adding or renaming a project.
+- Icons: `public/favicon*`, `public/apple-touch-icon.png`
 
 ## Medium posts
 
@@ -23,5 +24,5 @@ npm install
 npm run dev       # http://localhost:5173
 npm test
 npm run lint
-npm run build     # fetches Medium posts, then builds to dist/
+npm run build     # fetches Medium posts, builds to dist/, then writes per-project preview pages
 ```
