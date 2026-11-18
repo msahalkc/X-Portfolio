@@ -24,6 +24,7 @@ export const products = [
   {
     id: "ab",
     slug: "asset-build",
+    fastener: "tape",
     note: "Started as a gold tracker in October 2024. I've used it every day since.",
     scribble: "started as a gold tracker, Oct 2024",
     tilt: "-1.2deg",
@@ -50,6 +51,7 @@ export const products = [
   {
     id: "ex",
     slug: "extend",
+    fastener: "clip",
     note: "Sidecar, without putting my personal Apple Account on a work laptop.",
     scribble: "Sidecar, minus the shared Apple Account",
     tilt: "1deg",
@@ -79,6 +81,7 @@ export const products = [
     id: "ad",
     featured: true,
     slug: "adahly",
+    fastener: "binder",
     note: "No ads, no trackers, nothing to sell. Phone + watch.",
     scribble: "no ads, no trackers, phone + watch",
     tilt: "0.8deg",
@@ -105,6 +108,7 @@ export const products = [
   {
     id: "she",
     slug: "simple-header-editor",
+    fastener: "tape",
     note: "About 12 KB, open source and fully local.",
     scribble: "12 KB, open source, fully local",
     tilt: "-0.9deg",
