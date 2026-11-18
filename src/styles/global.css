@@ -236,9 +236,11 @@ footer .sig { font-size: 28px; color: var(--ink); }
 .story p { font-size: 17.5px; line-height: 1.7; color: var(--ink-2); }
 .decisions { display: flex; flex-direction: column; gap: 22px; }
 .decisions ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; }
-.decisions li { background: linear-gradient(transparent 46px, rgba(194, 64, 47, 0.35) 46px 47px, transparent 47px), repeating-linear-gradient(transparent 0 25px, var(--grid) 25px 26px) 0 47px / 100% calc(100% - 47px) no-repeat, var(--noise), var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 6px 16px var(--shadow); }
+/* Ruled index cards. Text line-height = rule spacing (--rule), and the rules are drawn on the text block itself,
+   so every line of writing sits just below its baseline; the block grows to fill the card so rules run to the bottom. */
+.decisions li { --rule: 26px; background: linear-gradient(transparent 46px, rgba(194, 64, 47, 0.35) 46px 47px, transparent 47px), var(--noise), var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 20px 20px 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 6px 16px var(--shadow); }
 .decisions .num { font-size: 34px; line-height: 1; color: var(--red); }
-.decisions p { font-size: 15.5px; line-height: 1.6; }
+.decisions p { flex: 1; margin: 0 -20px; padding: 0 20px; font-size: 15.5px; line-height: var(--rule); min-height: calc(var(--rule) * 4); background: repeating-linear-gradient(transparent 0 calc(var(--rule) - 5px), var(--grid) calc(var(--rule) - 5px) calc(var(--rule) - 4px), transparent calc(var(--rule) - 4px) var(--rule)); }
 .decisions code { font-family: var(--mono); font-size: 13.5px; color: var(--red); }
 .stack { display: flex; flex-direction: column; gap: 12px; }
 .stack p { font-size: 14px; line-height: 1.8; color: var(--ink-2); max-width: 60em; }
