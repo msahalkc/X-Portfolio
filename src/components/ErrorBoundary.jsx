@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { site } from "../data/content";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class ErrorBoundary extends Component {
         <div className="wrap lost">
           <span className="note kicker">Something went wrong</span>
           <h1>This page didn&apos;t load.</h1>
-          <p>Try reloading. If it keeps happening, email me at msahalkc@gmail.com.</p>
+          <p>Try reloading. If it keeps happening, email me at {site.email}.</p>
           <a className="btn btn-dark" href="/">
             Go home
           </a>

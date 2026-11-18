@@ -3,7 +3,7 @@
 export const site = {
   name: "Muhammed Sahal K C",
   short: "sahal kc",
-  email: "msahalkc@gmail.com",
+  email: "hello@msahalkc.com",
   github: "https://github.com/msahalkc",
   linkedin: "https://www.linkedin.com/in/sahalkc/",
   medium: "https://msahalkc.medium.com/",
